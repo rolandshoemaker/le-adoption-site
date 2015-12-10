@@ -1,0 +1,59 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+	<style>
+		body { 
+			width: 90%;
+			margin: auto;
+			font-family: "Open Sans", Helvetica, Arial, sans-serif;
+			font-size: 20px;
+			line-height: 1.5;
+			font-weight: 300;
+			color: #111;
+		}
+		wrapper { width: 100%; }
+		img { margin: auto; display: block; max-width: 100%; padding: 15px; }
+		h1, h2, h3 {
+			font-family: "Open Sans", Helvetica, Arial, sans-serif;
+			-webkit-font-smoothing: antialiased;
+			text-rendering: optimizeLegibility;
+			letter-spacing: -1px;
+			line-height: 1;
+			font-weight: 300;
+		}
+		h1 { font-size: 50px; }
+		h2 { font-size: 40px; }
+    h3 { font-size: 30px; font-style: italic; }
+	</style>
+    </head>
+    <body>
+	<div class="wrapper"><img src="le-logo.svg" style="width: 60%; margin-top: 20px;"/></div>
+
+	<h1 style="text-align: center;">Gauging Let's Encrypt's adoption rate</h2>
+  <h3 style="text-align: center;">(and other things)</h3>
+	<p style="text-align: center;">Updated ???</p>
+
+  <h2>Methodology</h2>
+  <p>Built with Golang + CT, called <code>ca-adoption-scanner</code>, is on github. ^_^</p>
+
+	<h2>Scan scope</h2>
+  <p>This chart shows the number of certificates we extracted from CT logs to check, the number of DNS names extracted from those certificates to scan, and the duration of each scan.</p>
+	<div class="wrapper"><img src="scan-info.png"/></div>
+
+	<h2>Adoption information</h2>
+  <p>This chart shows the percentage of DNS names that use their certificate as a percentage of the number of the total number of names scanned. It also shows the number of certificates that are used either by either none, some, or all their DNS names.</p>
+	<div class="wrapper"><img src="adoption.png"/></div>
+
+	<h2>Feature usage</h2>
+  <p>This chart shows the percentage of DNS names that support various TLS features or extensions. Currently this only tracks deployment of OCSP response stapling and the inclusion of SCT receipts in either the TLS handshake, or in a stapled OCSP response.</p>
+	<div class="wrapper"><img src="features.png"/></div>
+
+	<h2>Negotiated cipher suites</h2>
+  <p>This chart shows a breakdown of the cipher suites negotiated during successful TLS handshakes.</p>
+	<div class="wrapper"><img src="ciphers.png"/></div>
+
+	<h2>Scanned name issues</h2>
+  <p>This chart shows the various rates of errors the scanner runs into while attempting to preform TLS handshakes with DNS names.</p>
+	<div class="wrapper"><img src="problems.png"/></div>
+    </body>
+</html>
